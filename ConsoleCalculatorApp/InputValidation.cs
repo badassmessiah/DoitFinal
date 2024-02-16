@@ -2,24 +2,21 @@
 {
     public static class InputValidation
     {
-        public static double ValidateNumber(string input)
-        {
-            if (string.IsNullOrWhiteSpace(input) || input.Trim() != input || !double.TryParse(input, out double number))
-            {
-                Console.WriteLine("Invalid input. Please enter a valid number.");
-                return double.NaN;
-            }
-            return number;
-        }
-
         public static double GetValidNumber(string userInput)
         {
             double number;
+            string input;
             do
             {
                 Console.WriteLine(userInput);
-                string input = Console.ReadLine();
-                number = InputValidation.ValidateNumber(input);
+                input = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(input) || input.Trim() != input || !double.TryParse(input, out number))
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid number.");
+                    number = double.NaN;
+                }
+
             } while (double.IsNaN(number));
 
             return number;
