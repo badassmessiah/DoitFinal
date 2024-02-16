@@ -43,7 +43,8 @@
                     if (guess == number)
                     {
                         Console.WriteLine($"Congratulations, {name}! You have guessed the number.");
-                        score = attempts;
+                        score = ScoringSystem.CalculateScore(max, attempts);
+                        Console.WriteLine($"Your score is {score}.");
                         break;
                     }
                     else if (guess > number)
