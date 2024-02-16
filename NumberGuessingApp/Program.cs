@@ -33,6 +33,7 @@
                         score = ScoringSystem.CalculateScore(max, attempts);
                         Console.WriteLine($"Your score is {score}.");
                         Save.AsCSV(name, score);
+                        ScoreSort.Sort();
                         break;
                     }
                     else if (guess > number)
