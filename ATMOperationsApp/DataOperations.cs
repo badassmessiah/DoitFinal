@@ -1,11 +1,14 @@
-﻿using System.Text.Json;
+﻿using System.Text;
+using System.Text.Json;
+using System.Text.Encodings.Web;
 
 namespace ATMOperationsApp
 {
     public static class DataOperations
     {
+        private const string LogFilePath = "../../../Logs.json";
         private const string CustomersFilePath = "../../../Customers.json";
-        private static readonly JsonSerializerOptions options = new JsonSerializerOptions { WriteIndented = true };
+        private static readonly JsonSerializerOptions options = new JsonSerializerOptions { WriteIndented = true, Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
         private static List<Customer>? customers;
 
         public static void SaveNewCustomer(Customer customer)
@@ -111,5 +114,27 @@ namespace ATMOperationsApp
                 Console.WriteLine($"Failed to write customers to file: {ex}");
             }
         }
+
+        private static List<string> logs = new List<string>();
+
+        public static void WriteLogsToFile(string log)
+        {
+            try
+            {
+                logs.Add($"{log}");
+                
+                string json = JsonSerializer.Serialize(logs, options);
+
+                using (var streamWriter = new StreamWriter(LogFilePath, false, new UTF8Encoding(true)))
+                {
+                    streamWriter.Write(json);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to write logs to file: {ex}");
+            }
+        }
+
     }
 }

@@ -75,6 +75,7 @@
                                 break;
                             case 4:
                                 Console.WriteLine("You have been logged out. Thank you for using our ATM. Goodbye!\n");
+                                DataOperations.WriteLogsToFile(Logger.LogOut(currentCustomer));
                                 currentCustomer = null;
                                 break;
                             default:

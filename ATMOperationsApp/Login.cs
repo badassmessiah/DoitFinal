@@ -17,7 +17,7 @@ namespace ATMOperationsApp
                 Console.WriteLine("Invalid ID or password. Please try again.");
                 return null;
             }
-
+            DataOperations.WriteLogsToFile(Logger.LogIn(customer));
             return customer;
         }
     }

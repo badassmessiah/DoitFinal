@@ -29,14 +29,22 @@
     "Surname": "Messiah",
     "PersonalNumber": "01011000000",
     "Password": "9887",
-    "Balance": 117993
+    "Balance": 1109274075
   },
   {
     "Id": 5,
     "Name": "George",
     "Surname": "Michael",
     "PersonalNumber": "03011000000",
-    "Password": "7793",
-    "Balance": 1000
+    "Password": "1111",
+    "Balance": 11114
+  },
+  {
+    "Id": 6,
+    "Name": "Nina",
+    "Surname": "Gomez",
+    "PersonalNumber": "00222000122",
+    "Password": "3887",
+    "Balance": 12099
   }
 ]

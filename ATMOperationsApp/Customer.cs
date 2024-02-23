@@ -16,6 +16,7 @@
 
         public double CheckBalance()
         {
+            DataOperations.WriteLogsToFile(Logger.CheckBalance(this));
             return Balance;
         }
 
@@ -29,6 +30,7 @@
 
             Balance += amount;
             DataOperations.UpdateCustomer(this);
+            DataOperations.WriteLogsToFile(Logger.Deposit(this, amount));
         }
 
         public void Withdraw(double amount)
@@ -47,6 +49,7 @@
 
             Balance -= amount;
             DataOperations.UpdateCustomer(this);
+            DataOperations.WriteLogsToFile(Logger.Withdraw(this, amount));
         }
     }
 }
