@@ -127,7 +127,8 @@ namespace ATMOperationsApp
 
                 using (var streamWriter = new StreamWriter(LogFilePath, false, new UTF8Encoding(true)))
                 {
-                    streamWriter.Write(json);
+                    //streamWriter.Write(json);
+                    streamWriter.WriteLine(json);
                 }
             }
             catch (Exception ex)
