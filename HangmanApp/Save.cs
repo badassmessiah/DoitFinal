@@ -40,10 +40,19 @@ namespace HangmanApp
                 scores.Add(new ScoreData { Name = name, Score = score });
             }
 
-            using (TextWriter WriteFileStream = new StreamWriter(path))
+            try
             {
-                SerializerObj.Serialize(WriteFileStream, scores);
+                using (TextWriter WriteFileStream = new StreamWriter(path))
+                {
+                    SerializerObj.Serialize(WriteFileStream, scores);
+                }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
+
+            
         }
     }
 }
