@@ -18,9 +18,25 @@
   {
     "Id": 3,
     "Name": "Dark",
-    "Surname": "Una",
+    "Surname": "Light",
     "PersonalNumber": "02000000000",
     "Password": "5434",
+    "Balance": 1000
+  },
+  {
+    "Id": 4,
+    "Name": "Jesus",
+    "Surname": "Messiah",
+    "PersonalNumber": "01011000000",
+    "Password": "9887",
+    "Balance": 101231
+  },
+  {
+    "Id": 5,
+    "Name": "George",
+    "Surname": "Michael",
+    "PersonalNumber": "03011000000",
+    "Password": "7793",
     "Balance": 1000
   }
 ]

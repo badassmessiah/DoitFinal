@@ -15,9 +15,14 @@
             return $"Id: {Id}, Name: {Name}, Surname: {Surname}, Personal Number: {PersonalNumber}, Balance: {Balance}";
         }
 
+        public double CheckBalance()
+        {
+            return Balance;
+        }
         public void Deposit(double amount)
         {
             Balance += amount;
+            DataOperations.UpdateCustomer(this);
         }
 
         public void Withdraw(double amount)
@@ -29,6 +34,7 @@
             else
             {
                 Balance -= amount;
+                DataOperations.UpdateCustomer(this);
             }
         }
 
