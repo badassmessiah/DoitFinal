@@ -9,6 +9,12 @@
             Console.WriteLine("Welcome to Hangman! You have 6 tries to guess the word, but first, what is your name?");
 
             name = Console.ReadLine();
+            while (string.IsNullOrWhiteSpace(name) || !name.All(char.IsLetter) || name.Length < 2)
+            {
+                Console.WriteLine("Please enter a valid name.");
+                name = Console.ReadLine();
+            }
+
 
             var word = RandomWord.GetRandomWord();
 
