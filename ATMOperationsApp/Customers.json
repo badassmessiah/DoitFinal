@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "Name": "Dua",
+    "Surname": "Lipa",
+    "PersonalNumber": "00000000000",
+    "Password": "3793",
+    "Balance": 1000
+  },
+  {
+    "Id": 2,
+    "Name": "Taylor",
+    "Surname": "Swift",
+    "PersonalNumber": "01000000000",
+    "Password": "2444",
+    "Balance": 1000
+  },
+  {
+    "Id": 3,
+    "Name": "Dark",
+    "Surname": "Una",
+    "PersonalNumber": "02000000000",
+    "Password": "5434",
+    "Balance": 1000
+  }
+]
