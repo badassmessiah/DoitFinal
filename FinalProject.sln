@@ -5,7 +5,9 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleCalculatorApp", "ConsoleCalculatorApp\ConsoleCalculatorApp.csproj", "{AB531B38-FD82-4453-84EE-C8FBDBDA7E9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberGuessingApp", "NumberGuessingApp\NumberGuessingApp.csproj", "{8B8F57CE-17CE-4E71-8539-2FFD8919DBF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumberGuessingApp", "NumberGuessingApp\NumberGuessingApp.csproj", "{8B8F57CE-17CE-4E71-8539-2FFD8919DBF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangmanApp", "HangmanApp\HangmanApp.csproj", "{55C57974-AA1F-4005-A764-A6DADF9D6E75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8B8F57CE-17CE-4E71-8539-2FFD8919DBF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B8F57CE-17CE-4E71-8539-2FFD8919DBF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B8F57CE-17CE-4E71-8539-2FFD8919DBF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55C57974-AA1F-4005-A764-A6DADF9D6E75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55C57974-AA1F-4005-A764-A6DADF9D6E75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55C57974-AA1F-4005-A764-A6DADF9D6E75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55C57974-AA1F-4005-A764-A6DADF9D6E75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
