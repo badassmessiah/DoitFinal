@@ -4,7 +4,7 @@ namespace ATMOperationsApp
 {
     public static class DataOperations
     {
-        private const string FilePath = "../../../Customers.json";
+        private const string CustomersFilePath = "../../../Customers.json";
         private static readonly JsonSerializerOptions options = new JsonSerializerOptions { WriteIndented = true };
         private static List<Customer>? customers;
 
@@ -16,7 +16,10 @@ namespace ATMOperationsApp
                 return;
             }
 
-            customers = customers ?? LoadCustomers();
+            if (customers == null)
+            {
+                customers = LoadCustomers();
+            }
 
             customer.Id = customers.Any() ? customers.Max(c => c.Id) + 1 : 1;
 
@@ -41,8 +44,8 @@ namespace ATMOperationsApp
 
             try
             {
-                customers = File.Exists(FilePath)
-                    ? JsonSerializer.Deserialize<List<Customer>>(File.ReadAllText(FilePath))
+                customers = File.Exists(CustomersFilePath)
+                    ? JsonSerializer.Deserialize<List<Customer>>(File.ReadAllText(CustomersFilePath))
                     : new List<Customer>();
             }
             catch (Exception ex)
@@ -101,7 +104,7 @@ namespace ATMOperationsApp
         {
             try
             {
-                File.WriteAllText(FilePath, JsonSerializer.Serialize(customers, options));
+                File.WriteAllText(CustomersFilePath, JsonSerializer.Serialize(customers, options));
             }
             catch (Exception ex)
             {

@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        public static Customer currentCustomer = null;
+        public static Customer? currentCustomer = null;
 
         static void Main(string[] args)
         {
@@ -22,11 +22,14 @@
                         }
                         break;
                     case 2:
-                        Customer newCustomer = Registration.Register();
-                        Console.WriteLine("Registration successful");
-                        Console.WriteLine(newCustomer.ShowCustomerInfo());
-                        DataOperations.SaveNewCustomer(newCustomer);
-                        Console.WriteLine($"Now you can log with your ID ({newCustomer.Id}) and password ({newCustomer.Password})");
+                        Customer? newCustomer = Registration.Register();
+                        if (newCustomer != null)
+                        {
+                            Console.WriteLine("Registration successful");
+                            Console.WriteLine(newCustomer.ShowCustomerInfo());
+                            DataOperations.SaveNewCustomer(newCustomer);
+                            Console.WriteLine($"Now you can log with your ID ({newCustomer.Id}) and password ({newCustomer.Password})");
+                        }
                         break;
                     case 3:
                         Console.WriteLine("Goodbye!");

@@ -9,7 +9,6 @@
         public string Password { get; set; }
         public double Balance { get; set; }
 
-
         public string ShowCustomerInfo()
         {
             return $"Id: {Id}, Name: {Name}, Surname: {Surname}, Personal Number: {PersonalNumber}, Balance: {Balance}";
@@ -19,24 +18,35 @@
         {
             return Balance;
         }
+
         public void Deposit(double amount)
         {
+            if (amount < 0)
+            {
+                Console.WriteLine("Deposit amount cannot be negative.");
+                return;
+            }
+
             Balance += amount;
             DataOperations.UpdateCustomer(this);
         }
 
         public void Withdraw(double amount)
         {
+            if (amount < 0)
+            {
+                Console.WriteLine("Withdrawal amount cannot be negative.");
+                return;
+            }
+
             if (amount > Balance)
             {
                 Console.WriteLine("Insufficient funds");
+                return;
             }
-            else
-            {
-                Balance -= amount;
-                DataOperations.UpdateCustomer(this);
-            }
-        }
 
+            Balance -= amount;
+            DataOperations.UpdateCustomer(this);
+        }
     }
 }

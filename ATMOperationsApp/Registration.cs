@@ -5,19 +5,30 @@
         public static Customer Register()
         {
             Console.Write("Enter your name: ");
-            string name = Console.ReadLine();
+            string? name = Console.ReadLine();
+            if (string.IsNullOrEmpty(name))
+            {
+                Console.WriteLine("Name cannot be empty.");
+                return null;
+            }
 
             Console.Write("Enter your surname: ");
-            string surname = Console.ReadLine();
+            string? surname = Console.ReadLine();
+            if (string.IsNullOrEmpty(surname))
+            {
+                Console.WriteLine("Surname cannot be empty.");
+                return null;
+            }
 
-            string personalNumber;
+            string? personalNumber;
             do
             {
                 Console.Write("Enter your personal number (11 characters long): ");
                 personalNumber = Console.ReadLine();
-                if (personalNumber.Length != 11)
+                if (string.IsNullOrEmpty(personalNumber) || personalNumber.Length != 11)
                 {
                     Console.WriteLine("Personal number must be 11 characters long. Please try again.");
+                    continue;
                 }
 
                 var existingCustomers = DataOperations.LoadCustomers();
@@ -30,11 +41,10 @@
                         break;
                     }
                 }
-            } while (personalNumber.Length != 11);
+            } while (string.IsNullOrEmpty(personalNumber) || personalNumber.Length != 11);
 
             Random random = new Random();
             string password = random.Next(1000, 9999).ToString();
-
 
             double balance = 1000;
 
@@ -49,6 +59,5 @@
 
             return newCustomer;
         }
-
     }
 }
