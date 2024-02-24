@@ -129,13 +129,10 @@ namespace ATMOperationsApp
         {
             try
             {
-                logs.Add($"{log}");
-                
-                string json = JsonSerializer.Serialize(logs, options);
+                string json = JsonSerializer.Serialize(log, options);
 
-                using (var streamWriter = new StreamWriter(LogFilePath, false, new UTF8Encoding(true)))
+                using (var streamWriter = new StreamWriter(LogFilePath, true, new UTF8Encoding(true)))
                 {
-                    //streamWriter.Write(json);
                     streamWriter.WriteLine(json);
                 }
             }
