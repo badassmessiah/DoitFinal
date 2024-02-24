@@ -46,5 +46,21 @@
     "PersonalNumber": "00222000122",
     "Password": "3887",
     "Balance": 12099
+  },
+  {
+    "Id": 7,
+    "Name": "Robert",
+    "Surname": "Plant",
+    "PersonalNumber": "11111111111",
+    "Password": "2222",
+    "Balance": 1.2307406991404775E+93
+  },
+  {
+    "Id": 8,
+    "Name": "Jimmy",
+    "Surname": "Page",
+    "PersonalNumber": "22222222222",
+    "Password": "1583",
+    "Balance": 0
   }
 ]

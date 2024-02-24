@@ -28,7 +28,7 @@
                             Console.WriteLine("Registration successful");
                             Console.WriteLine(newCustomer.ShowCustomerInfo());
                             DataOperations.SaveNewCustomer(newCustomer);
-                            Console.WriteLine($"Now you can log with your ID ({newCustomer.Id}) and password ({newCustomer.Password})");
+                            Console.WriteLine($"Now you can log with Personal Number ({newCustomer.PersonalNumber}) and password ({newCustomer.Password})");
                         }
                         break;
                     case 3:

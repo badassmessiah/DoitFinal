@@ -60,17 +60,25 @@ namespace ATMOperationsApp
             return customers;
         }
 
-        public static Customer? LoadCustomer(int id, string password)
+        public static Customer? LoadCustomer(string personalNumber, string password)
         {
             if (password == null)
             {
                 Console.WriteLine("Password cannot be null.");
                 return null;
             }
+            if (personalNumber == null)
+            {
+                Console.WriteLine("Personal number cannot be null.");
+                return null;
+            }
 
-            customers = customers ?? LoadCustomers();
+            if (customers == null)
+            {
+                customers = LoadCustomers();
+            }
 
-            return customers.FirstOrDefault(c => c.Id == id && c.Password == password);
+            return customers.FirstOrDefault(c => c.PersonalNumber == personalNumber && c.Password == password);
         }
 
         public static void UpdateCustomer(Customer customer)

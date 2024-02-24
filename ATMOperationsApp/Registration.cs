@@ -46,7 +46,7 @@
             Random random = new Random();
             string password = random.Next(1000, 9999).ToString();
 
-            double balance = 1000;
+            double balance = 0;
 
             Customer newCustomer = new Customer
             {
