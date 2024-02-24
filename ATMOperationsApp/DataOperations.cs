@@ -129,12 +129,18 @@ namespace ATMOperationsApp
         {
             try
             {
-                string json = JsonSerializer.Serialize(log, options);
+                List<string> existingLogs = new List<string>();
 
-                using (var streamWriter = new StreamWriter(LogFilePath, true, new UTF8Encoding(true)))
+                if (File.Exists(LogFilePath))
                 {
-                    streamWriter.WriteLine(json);
+                    existingLogs = JsonSerializer.Deserialize<List<string>>(File.ReadAllText(LogFilePath)) ?? new List<string>();
                 }
+
+                existingLogs.Add(log);
+
+                string json = JsonSerializer.Serialize(existingLogs, options);
+
+                File.WriteAllText(LogFilePath, json);
             }
             catch (Exception ex)
             {

@@ -27,9 +27,9 @@
     "Id": 4,
     "Name": "Jesus",
     "Surname": "Messiah",
-    "PersonalNumber": "01011000000",
+    "PersonalNumber": "66666666666",
     "Password": "9887",
-    "Balance": 1109272763
+    "Balance": 1108272763
   },
   {
     "Id": 5,
@@ -53,7 +53,7 @@
     "Surname": "Plant",
     "PersonalNumber": "11111111111",
     "Password": "2222",
-    "Balance": 1.2307406991404775E+93
+    "Balance": 1480
   },
   {
     "Id": 8,
