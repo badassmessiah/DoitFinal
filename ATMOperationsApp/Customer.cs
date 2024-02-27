@@ -11,7 +11,7 @@
 
         public string ShowCustomerInfo()
         {
-            return $"Id: {Id}, Name: {Name}, Surname: {Surname}, Personal Number: {PersonalNumber}, Balance: {Balance}";
+            return $"Name: {Name}, Surname: {Surname}, Personal Number: {PersonalNumber}, Balance: {Balance}";
         }
 
         public double CheckBalance()

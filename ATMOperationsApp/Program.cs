@@ -6,6 +6,7 @@
 
         static void Main(string[] args)
         {
+
             while (true)
             {
                 Console.WriteLine("Welcome to ATM Operations App\nLogin - 1\nRegister - 2\nExit App - 3");
