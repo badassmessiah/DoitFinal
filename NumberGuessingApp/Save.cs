@@ -27,6 +27,7 @@ namespace NumberGuessingApp
                         {
                             if (score > existingScore)
                             {
+                                Console.WriteLine("New High Score!");
                                 lines[i] = csv.Trim();
                                 File.WriteAllLines(path, lines);
                             }
