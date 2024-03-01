@@ -27,6 +27,12 @@
 
                 if (int.TryParse(input, out guess))
                 {
+                    if (guess < min || guess > max)
+                    {
+                        Console.WriteLine($"Please enter a number between {min} and {max}.");
+                        continue;
+                    }
+
                     if (guess == number)
                     {
                         Console.WriteLine($"Congratulations, {name}! You have guessed the number.");
